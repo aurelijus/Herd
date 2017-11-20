@@ -212,10 +212,7 @@ def seed(torrent, local_file):
 
 
 def local_ip():
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.connect(("10.1.0.0", 0))
-    return s.getsockname()[0]
-
+    return socket.gethostname().split('.')[0]
 
 def herdmain():
     if not os.path.exists(opts['log_dir']):
